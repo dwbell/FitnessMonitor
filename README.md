@@ -1,5 +1,6 @@
 <h2>Fitness Activity Monitor Setup</h2>
 
+<h4>Device Setup</h4> 
 1) Download the operating system image  
 https://www.raspberrypi.org/downloads/raspbian/  
 
@@ -9,10 +10,10 @@ https://etcher.io/
 3) Now flash the downloaded OS image onto the SD card using the Etcher tool  
 
 4) Upon Raspberry Pi boot run,  
-<code>sudo raspi-config</code> (Run the wifi script If needed and/or enable SSH)
+<code>sudo raspi-config</code> (Run the wifi script and/or enable SSH as needed)
 
 5) Type in, <code>sudo ip link show</code>, this will produce your network interfaces,  
-ensure that wlan0 or eth0 for are marked as 'UP'  
+ensure that wlan0 or eth0 for are marked as 'UP'
 
 6) At this point you can run a good ol' ping test  
 <code>ping google.com</code>  
@@ -28,6 +29,7 @@ ensure that wlan0 or eth0 for are marked as 'UP'
 <code>vim /etc/default/keyboard</code>  
 Change the "gb" to "us", save the file and upon reboot it will be changed  
 
+<h4>Bluetooth Setup</h4>
 9) Insert the Bluetooth code, first you will need the MAC address of the server device. To find this use,  
 <code>hciconfig -a</code>  
 MAC address format looks like this "XX:XX:XX:XX:XX:XX" 
@@ -48,7 +50,8 @@ that a script is continuously ran regardless of any errors that may occur from p
 13) With a default config file in place, we need to add a program to be watched under supervisor.  
 To accomplish this we add a [program] block to /etc/supervisord.conf  
 
-```[program:bluetooth]
+```
+[program:bluetooth]
 directory:/home/pi
 command=/usr/bin/python /home/pi/bluetoothserver.py
 autostart=true
@@ -60,3 +63,19 @@ log_stderr=true
 stderr_logfile=/home/pi/test.err.log
 stdout_logfile=/home/pi/test.out.log
 ```
+After any changes to the /etc/supervisord.conf file, run the following commands to save  
+<code> supervisorctl read </code>  
+<code> supervisorctl update </code>
+
+14) Now ensure that the bluetooth module and the 'supervisor' program both get started on boot.  
+Add the this to the end of the file, BUT before the exit 0 line
+<code> sudo vim /etc/rc.local </code> 
+```
+sudo hciconfig hci0 piscan
+supervisord &
+```
+
+<h4>Cellular Network Setup</h4>
+
+
+
