@@ -76,8 +76,9 @@ sudo hciconfig hci0 piscan
 supervisord &
 ```
   
-#### Cellular
+#### IBM Watson
 
+15) In order to connect to IBM Watson you will need to set up an account with them through there website.  
+https://www.ibm.com/internet-of-things/spotlight/watson-iot-platform
 
-
-
+16) With an account set up,
