@@ -86,15 +86,16 @@ https://console.bluemix.net/docs/services/IoT/getting-started.html#getting-start
 
 17) With the endpoint setup we can now start implementating the code to control transmission to the  
 IBM cloud. Add the following script into its own directory by issuing the following commands.  
-<code>mkdir /home/pi/IBM_Watson</code>  
-<code>cd /home/pi/IBM_Watson</code>  
+<code>mkdir /home/pi/IBM_Connect</code>  
+<code>cd /home/pi/IBM_Connect</code>  
 <code> vim deviceClient.py</code>  
 Now we can copy the script into that file we have just created. The script can be found here,
 https://github.com/dwbell/FitnessMonitor/tree/master/IBM_Connect  
 
 18) Now we need to add the configuration file to the same directory at /home/pi. This configuration file
 allows us to enter individual credentials for your specific connection. The credentials will be obtained 
-from when you ran through the IBM documentation listed above. The script is located here. (.cfg)
+from when you ran through the IBM documentation listed above. The script is located here (.cfg)
+https://github.com/dwbell/FitnessMonitor/tree/master/IBM_Connect  
 
 19) BEFORE running the code we will need to obtain a package from python's package repository otherwise known as  
 'pip'. These packages allows us to interact with IBM Watson's cloud service. To run this command ensure you are  
