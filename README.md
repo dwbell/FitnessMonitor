@@ -1,6 +1,6 @@
-<h2>Fitness Activity Monitor Setup</h2>
+## Fitness Activity Monitor Setup  
 
-
+#### Device
 1) Download the operating system image  
 https://www.raspberrypi.org/downloads/raspbian/  
 
@@ -28,7 +28,8 @@ ensure that wlan0 or eth0 for are marked as 'UP'
 8) Set up the keyboard to the U.S. standard  
 <code>vim /etc/default/keyboard</code>  
 Change the "gb" to "us", save the file and upon reboot it will be changed  
-
+  
+#### Bluetooth
 
 9) Insert the Bluetooth code, first you will need the MAC address of the server device. To find this use,  
 <code>hciconfig -a</code>  
@@ -74,7 +75,8 @@ Add the this to the end of the file, BUT before the exit 0 line
 sudo hciconfig hci0 piscan
 supervisord &
 ```
-
+  
+#### Cellular
 
 
 
