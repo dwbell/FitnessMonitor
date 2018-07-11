@@ -47,16 +47,16 @@ that a script is continuously ran regardless of any errors that may occur from p
 
 13) With a default config file in place, we need to add a program to be watched under supervisor.  
 To accomplish this we add a [program] block to /etc/supervisord.conf  
-<code>
-[program:bluetooth]
+
+```[program:bluetooth]
 directory:/home/pi
-command=/usr/bin/python /home/pi/bluetoothserver.py 
+command=/usr/bin/python /home/pi/bluetoothserver.py
 autostart=true
 autorestart=true
 startsecs=0
 startretries=3
 log_stdout=true
 log_stderr=true
-stderr_logfile=/home/pi/test.err.log 
+stderr_logfile=/home/pi/test.err.log
 stdout_logfile=/home/pi/test.out.log
-</code> 
+```
