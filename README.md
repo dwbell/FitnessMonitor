@@ -13,7 +13,7 @@ https://etcher.io/
 <code>sudo raspi-config</code> (Run the wifi script and/or enable SSH as needed)
 
 5) Type in, <code>sudo ip link show</code>, this will produce your network interfaces,  
-ensure that wlan0 or eth0 for are marked as 'UP'
+ensure that wlan0 or eth0 are marked as 'UP'
 
 6) At this point you can run a good ol' ping test  
 <code>ping google.com</code>  
@@ -23,7 +23,6 @@ ensure that wlan0 or eth0 for are marked as 'UP'
 <code>sudo apt-get upgrade</code>  
 <code>sudo apt-get vim  </code>  
 <code>sudo apt-get install python-bluez</code>  
-<code> sudo apt-get install</code>  
 
 8) Set up the keyboard to the U.S. standard  
 <code>vim /etc/default/keyboard</code>  
